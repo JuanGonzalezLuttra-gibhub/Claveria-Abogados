@@ -100,6 +100,8 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -111,7 +113,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  max-width: 100%;
 }
+
+main {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 
 img, video {
   max-width: 100%;
@@ -2455,6 +2464,7 @@ input, textarea, select {
   flex-direction: column;
   padding: var(--space-6) var(--container-px);
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .mobile-menu.open {
@@ -2731,7 +2741,7 @@ body.mobile-menu-active .header {
   }
 
   /* Cinematic Entrance Animations for Mobile */
-  .fade-up {
+  .fade-up, .slide-left, .slide-right {
     opacity: 0 !important;
     transform: translateY(24px) scale(0.99) !important;
     filter: blur(4px) !important;
@@ -2741,11 +2751,12 @@ body.mobile-menu-active .header {
     will-change: transform, opacity, filter;
   }
 
-  .fade-up.is-visible {
+  .fade-up.is-visible, .slide-left.is-visible, .slide-right.is-visible {
     opacity: 1 !important;
     transform: translateY(0) scale(1) !important;
     filter: blur(0) !important;
   }
+
 
   /* Cards Spacing and Breathing Room */
   .area-card, .case-card, .testimonial-card, .team-card--editorial, .process-step {
